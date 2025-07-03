@@ -19,11 +19,13 @@
     * { margin:0; padding:0; box-sizing:border-box; }
 
     :root {
-      --bg: #f2f2f2;
-      --text-primary: #0a0a0a;
-      --text-tertiary: #9a9a9a;
-      --accent: #0a0a0a;
+      --bg: #8280de;
+      --text-primary: #e8e7f3;
+      --text-tertiary: #c5c3e0;
+      --accent: #6b69d6;
       --white: #ffffff;
+      --button-purple: #5d5bd4;
+      --button-purple-hover: #4a47c9;
     }
 
     body {
@@ -64,7 +66,7 @@
       content: '';
       position: absolute;
       width: 300px; height: 300px;
-      background: radial-gradient(circle, rgba(0,0,0,0.03) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
       border-radius: 50%;
       z-index: -1;
     }
@@ -73,13 +75,13 @@
       width: 100%;
       max-width: 460px;
       object-fit: contain;
-      filter: drop-shadow(0 25px 50px rgba(0,0,0,0.08));
+      filter: drop-shadow(0 25px 50px rgba(0,0,0,0.15));
       animation: float 6s ease-in-out infinite;
       transition: all 0.4s cubic-bezier(0.16,1,0.3,1);
     }
     .app-demo-img:hover {
       transform: translateY(-5px) scale(1.02);
-      filter: drop-shadow(0 30px 60px rgba(0,0,0,0.12));
+      filter: drop-shadow(0 30px 60px rgba(0,0,0,0.2));
     }
 
     .content { animation: fadeIn 0.8s ease-out; }
@@ -110,6 +112,7 @@
       letter-spacing: 0.05em;
       line-height: 1;
       margin-bottom: 1rem;
+      color: var(--text-primary);
       opacity: 0;
       animation: fadeInUp 0.6s cubic-bezier(0.16,1,0.3,1) 0.4s forwards;
     }
@@ -147,11 +150,11 @@
       transition: all 0.3s cubic-bezier(0.16,1,0.3,1);
     }
 
-    /* App Store */
+    /* App Store - Updated to purple theme */
     .download-btn.app-store {
-      background: var(--accent);
+      background: var(--button-purple);
       color: var(--white);
-      border: 2px solid var(--accent);
+      border: 2px solid var(--button-purple);
     }
     .download-btn.app-store::before {
       content: '';
@@ -159,7 +162,7 @@
       top:50%; left:50%;
       width:0; height:0;
       border-radius:50%;
-      background:rgba(255,255,255,0.1);
+      background:rgba(255,255,255,0.15);
       transform:translate(-50%,-50%);
       transition:width 0.6s, height 0.6s;
     }
@@ -168,22 +171,23 @@
     }
     .download-btn.app-store:hover {
       transform: translateY(-3px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-      filter: brightness(1.1);
-      border-color: #444;
+      box-shadow: 0 10px 30px rgba(93,91,212,0.4);
+      background: var(--button-purple-hover);
+      border-color: var(--button-purple-hover);
     }
 
-    /* Google Play */
+    /* Google Play - Updated for purple theme */
     .download-btn.play-store {
-      background: transparent;
-      color: var(--accent);
-      border: 2px solid rgba(10,10,10,0.2);
+      background: rgba(255,255,255,0.1);
+      color: var(--text-primary);
+      border: 2px solid rgba(255,255,255,0.2);
       backdrop-filter: blur(10px);
     }
     .download-btn.play-store:hover {
       transform: translateY(-3px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-      border-color: var(--white);
+      box-shadow: 0 10px 30px rgba(255,255,255,0.15);
+      border-color: rgba(255,255,255,0.4);
+      background: rgba(255,255,255,0.15);
     }
 
     .download-btn svg { width:20px; height:20px; z-index:1 }
@@ -222,7 +226,7 @@
   <div class="container">
     <div class="content-wrapper">
       <div class="app-showcase">
-        <img src="images/demo_new.png"
+        <img src="images/demo.png"
              alt="Dolla Tracker app interface showing expense."
              class="app-demo-img">
       </div>
